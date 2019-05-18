@@ -1,0 +1,14 @@
+* MATHEMATICAL THINKING
+Repository with basic excercises to develop mathematical thinking and learn programing.
+
+* SYNOPSIS
+The general idea is to develop excercises for mathematical thinking in R, where my skills are better, and then translate it to common lisp and python.
+
+* EXERCISES
+Each folder contains the code for each task in the 3 different programing languages.
+
+** Darts
+*Computing pi by throwing Darts*, or by simulating the random process of throwing darts at a squared board with a circle drawn inside it.
+
+** Walk
+*Random walk* emulation, also known as stochastic or random process, that describes a path based on random integers.
