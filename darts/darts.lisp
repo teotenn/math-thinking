@@ -1,3 +1,5 @@
+(in-package :teoten.maths)
+
 (defun throw-dart ()
   "Simulates the randon throw of a dart. It can land anywhere in the square"
   (let ((x 0) ; LET creates new variable bindings
