@@ -1,3 +1,5 @@
+#+STARTUP: content
+
 * MATHEMATICAL THINKING
 Repository with basic excercises to develop mathematical thinking and learn programing.
 
@@ -12,3 +14,72 @@ Each folder contains the code for each task in the 3 different programing langua
 
 ** Walk
 *Random walk* emulation, also known as stochastic or random process, that describes a path based on random integers.
+
+** PPM
+
+*Paprts Per Million/billion* calculation. The function calculates proportion of element contained in a solid, express as mass units of element per mass units of sample (g, ug, mg, Kg), after being processed through a solution, particularly useful after reading absorbance AA, ICP, etc.
+
+*** PARAMETERS
+**** *solid* 
+mass of the solid processed in a solution
+**** *solution* 
+volume of the solution where the solid was processed
+**** *concentration* 
+concentration obtained after the lecture
+**** *solid.u* 
+units in which the solid is expressed ("g", "mg", "ug", "Kg")
+**** *solution.u* 
+units in which the solution is expressed ("l", "ml", "ul")
+**** *concentration.u* 
+units of mass per Liter, in which the concentratoin is expressed ("g", "mg", "ug", "Kg", "M", "mM", "uM")
+**** *mol* 
+if some units are expressed as mol, molar weght should be specified
+**** *result.element* and *result.sample* 
+     mass units of element per mass units of sample.
+
+*** RETURN
+
+The function returns the proportion of element contained in a solid, expressed in terms specified under "result.units"
+
+*** DETAILS
+Units of mass can be expressed as proportions of grams ('ug', 'mg', 'g', 'Kg') or mol ('M', 'mM', 'uM'). Units of volume as proportions of liter ('l','ml','ul'). This apply for both parameters, units ("solid.u", "solution.u" and "concentration.u") and "result.units" (units to express the results).
+
+Here "concentration" is given as mass unit per liter, as it is not addapted to change liter.
+
+
+*** EXAMPLES
+**** Proline in plants
+0.1014g of plant were processed in 7.5ml of water. The laboratory results give 13.009 uM/L proline (molar weight of Proline is 75.066). We want to express the results as mg of proline per Kg of plant
+
+***** In R
+
+#+BEGIN_SRC R
+ppm(solid=0.1014,solution=7.5,concentration=13.009,mol=75.066,solid.u='g',
+ solution.u='ml',concentration.u='uM', 
+ result.units=list(element='ug',sample='g'))
+#+END_SRC
+
+**** Elements in soil
+   Soil was digested in aqua regia, and diluted at 25ml for ICP. 
+
+***** In R
+#+BEGIN_SRC R
+soil <- c(0.266,0.271,0.277,0.243,0.257) # weight of samples of soil for digestion
+As <- c(0.054968685,0.056348685,0.090648685,0.057058685,0.070963685) # results from ICP for As
+Pb <- c(0.837786373333334,0.916599706666667,0.886459706666667,0.86488304,0.981849706666667) # ICP Pb
+icp <- data.frame(As,Pb)
+ppm(soil,25,icp)
+#+END_SRC
+
+
+*** To Do
+
+**** R
+
+***** TODO change result units from list to single variables
+
+**** Common lisp 
+
+***** TODO change the final formula using let
+
+***** TODO Add option for molarity
