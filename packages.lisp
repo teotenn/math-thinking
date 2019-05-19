@@ -9,4 +9,5 @@
 	   :is-unit
 	   :unit-to-proportion
 	   :proportion-to-unit
-	   :ppm))
+	   :ppm
+	   :throw-dart))

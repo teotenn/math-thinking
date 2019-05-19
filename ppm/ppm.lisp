@@ -47,22 +47,16 @@
 	      (solution-u "ml")
 	      (concentration-u "mg")
 	      (result-element "mg")
-	      (result-sample "Kg"))
-  (mapcar #'/
-	  (unit-to-proportion result-element
-		  (proportion-to-unit concentration-u concentration))
-	  (unit-to-proportion result-sample
-		  (mapcar #'/
-			  (proportion-to-unit solid-u solid)
-			  (proportion-to-unit solution-u solution)))))
-
-;; Examples ---
-;;; PPM> (ppm '(0.2) '(20) '(0.5))
-;;; PPM> (50.0)
-;; solid-u "mg" :concentration-u "ug") ---
-;;; PPM> (ppm '(200 210 207) '(25 25 25) '(1.5 1.67 1.59)
-;;; PPM> (0.1875 0.1988095 0.19202897)
-
-
-
-
+	      (result-sample "Kg")
+	      (mol nil))
+  "Returns ppm (mg/Kg), ppb (ug/Kg) or as desired"
+  (let* ((concentration (if mol (multiply-list concentration mol)
+			   concentration))
+	(proportion (mapcar #'/
+			    (proportion-to-unit solid-u solid)
+			    (proportion-to-unit solution-u solution)))
+	(concentration-g (proportion-to-unit concentration-u
+					     concentration)))
+    (mapcar #'/
+	    (unit-to-proportion result-element concentration-g)
+	    (unit-to-proportion result-sample proportion))))

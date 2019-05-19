@@ -1,5 +1,7 @@
 
-Tt.ppm <- function(solid,solution,concentration,mol=NULL,solid.u='g',solution.u='ml',concentration.u='mg', result.units=list(element='mg',sample='Kg'))
+ppm <- function(solid,solution,concentration,mol=NULL,
+                solid.u='g',solution.u='ml',concentration.u='mg',
+                result.units=list(element='mg',sample='Kg'))
 {
 ### Tranforming units
     ## Solid sample
@@ -44,3 +46,6 @@ Tt.ppm <- function(solid,solution,concentration,mol=NULL,solid.u='g',solution.u=
     results <- concentration.g/proportion.g
     results
 }
+
+ppm(solid=0.1014,solution=7.5,concentration=13.009,mol=75.066,
+    concentration.u='uM',result.units=list(element='ug',sample='g'))

@@ -17,7 +17,7 @@ Each folder contains the code for each task in the 3 different programing langua
 
 ** PPM
 
-*Paprts Per Million/billion* calculation. The function calculates proportion of element contained in a solid, express as mass units of element per mass units of sample (g, ug, mg, Kg), after being processed through a solution, particularly useful after reading absorbance AA, ICP, etc.
+*Parts Per Million/billion* calculation. The function calculates proportion of element contained in a solid, expressed as mass units of element per mass units of sample (g, ug, mg, Kg), after being processed through a solution, particularly useful after reading absorbance AA, ICP, etc.
 
 *** PARAMETERS
 **** *solid* 
@@ -54,9 +54,16 @@ Here "concentration" is given as mass unit per liter, as it is not addapted to c
 ***** In R
 
 #+BEGIN_SRC R
-ppm(solid=0.1014,solution=7.5,concentration=13.009,mol=75.066,solid.u='g',
- solution.u='ml',concentration.u='uM', 
- result.units=list(element='ug',sample='g'))
+ppm(solid=0.1014,solution=7.5,concentration=13.009,mol=75.066,
+    concentration.u='uM',result.units=list(element='ug',sample='g'))
+#+END_SRC
+
+***** In CL
+
+#+BEGIN_SRC common-lisp
+(in-package :maths)
+(ppm '(0.1014) '(7.5) '(13.009) 
+     :concentration-u "uM" :result-element "ug" :result-sample "g" :mol 75.066)
 #+END_SRC
 
 **** Elements in soil
@@ -68,6 +75,7 @@ soil <- c(0.266,0.271,0.277,0.243,0.257) # weight of samples of soil for digesti
 As <- c(0.054968685,0.056348685,0.090648685,0.057058685,0.070963685) # results from ICP for As
 Pb <- c(0.837786373333334,0.916599706666667,0.886459706666667,0.86488304,0.981849706666667) # ICP Pb
 icp <- data.frame(As,Pb)
+## All soils digested at 25mL
 ppm(soil,25,icp)
 #+END_SRC
 
@@ -78,8 +86,4 @@ ppm(soil,25,icp)
 
 ***** TODO change result units from list to single variables
 
-**** Common lisp 
 
-***** TODO change the final formula using let
-
-***** TODO Add option for molarity
