@@ -1,4 +1,4 @@
-### Simulate a random walking event
+### Simulates a random walking event
 walk <- function(n){
     ## Let "n" be number of repetitions
     ## and x,y the coordinates of each rep

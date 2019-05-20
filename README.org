@@ -1,4 +1,4 @@
-#+STARTUP: content
+#+STARTUP: showall
 
 * MATHEMATICAL THINKING
 Repository with basic excercises to develop mathematical thinking and learn programing.
@@ -80,10 +80,6 @@ ppm(soil,25,icp)
 #+END_SRC
 
 
-*** To Do
 
-**** R
-
-***** TODO change result units from list to single variables
 
 
