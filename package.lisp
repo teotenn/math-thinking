@@ -3,7 +3,7 @@
 
 ;;; Then we can define our package for this work
 (defpackage :teoten.maths
-  (:use :common-lisp)
+  (:use :common-lisp :cl-ana.plotting)
   (:export :multiply-list
 	   :is-prop
 	   :is-unit

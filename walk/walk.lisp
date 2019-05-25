@@ -1,4 +1,5 @@
 (in-package :teoten.maths)
+(require 'cl-ana.plotting)
 
 (defun walk (n)
   "Simulates a random walking event"
@@ -19,4 +20,10 @@
        else
        do (setf (nth i y)(nth (- i 1) y)) ; y
        and do (setf (nth i x)(- (nth (- i 1) x) 1))) ; x-1
-    (list x y)))
+    (mapcar #'cons x y)))
+
+(defun draw-walk (n)
+  "Plots a random walking event"
+  (draw (walk n)
+	:page-args
+	(list :terminal (wxt-term))))

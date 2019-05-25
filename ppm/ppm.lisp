@@ -60,3 +60,4 @@
     (mapcar #'/
 	    (unit-to-proportion result-element concentration-g)
 	    (unit-to-proportion result-sample proportion))))
+

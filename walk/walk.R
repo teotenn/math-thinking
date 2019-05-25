@@ -22,4 +22,4 @@ walk <- function(n){
     plot(x,y, type="p")
 }
 
-Tt.walk(10000)
+walk(10000)
