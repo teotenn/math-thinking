@@ -29,7 +29,3 @@ compute.pi <- function(n.throws){
     resultado=4*(count.inside/n.throws)
     resultado
 }
-
-
-    
-        

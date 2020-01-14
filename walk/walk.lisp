@@ -23,7 +23,10 @@
     (mapcar #'cons x y)))
 
 (defun draw-walk (n)
-  "Plots a random walking event"
+  "Plots the random walking event"
   (draw (walk n)
 	:page-args
 	(list :terminal (wxt-term))))
+;; Here the terminal is specified, but for personal usage, I changed it
+;; in the source code of cl-ana. Now this is the default terminal, therefore
+;; a simple (draw (walk n)) should also plot the function

@@ -1,7 +1,5 @@
-;;; Files defining a package MUST start with the cl package
 (in-package :cl-user)
 
-;;; Then we can define our package for this work
 (defpackage :teoten.maths
   (:use :common-lisp :cl-ana.plotting)
   (:export :multiply-list
@@ -10,4 +8,6 @@
 	   :unit-to-proportion
 	   :proportion-to-unit
 	   :ppm
-	   :throw-dart))
+	   :throw-dart
+	   :walk
+	   :draw-walk))
