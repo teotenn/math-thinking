@@ -7,6 +7,8 @@
 #+STYLE:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
 #+BABEL: :exports both
 
+* PPM
+
 A function that calculates proportion of element contained in a solid, 
 expressed as mass units of element per mass units of sample (g, ug, mg, 
 Kg), after being processed through a solution, particularly useful 

@@ -7,5 +7,7 @@
 #+STYLE:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
 #+BABEL: :exports both
 
+* Walk
+
 Simulates a random walking event, returning either the coordinates,
 or the plot. 
