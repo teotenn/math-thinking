@@ -1,0 +1,29 @@
+#+OPTIONS:    H:3 num:nil toc:2 \n:nil @:t ::t |:t ^:{} -:t f:t *:t TeX:t LaTeX:t skip:t d:(HIDE) tags:not-in-toc
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate 
+#+TITLE:    MATHEMATICAL THINKING
+#+AUTHOR:    teoten
+#+EMAIL:     teoten@gmail.com
+#+LANGUAGE:   en
+#+STYLE:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
+#+BABEL: :exports both
+
+* PPM
+
+A function that calculates proportion of element contained in a solid, 
+expressed as mass units of element per mass units of sample (g, ug, mg, 
+Kg), after being processed through a solution, particularly useful 
+after reading absorbance AA, ICP, etc.
+
+Given the following parameters
+
+   - =solid= mass of the solid processed in a solution
+   - =solution= volume of the solution where the solid was processed
+   - =concentration= concentration obtained after the lecture
+   - =solid.u= units in which the solid is expressed (default "g")
+   - =solution.u= units in which the solution is expressed (default "ml")
+   - =concentration.u= units of mass per Liter, in which the concentratoin is expressed (default "mg" for mg/L)
+   - =result.element= units of mass of element per units of mass of sample (i.e. mg/Kg = ppm)
+   - =result.sample=  units of mass of element per units of mass of sample
+
+Returns the proportion of element contained in a solid, expressed in 
+terms specified under =result.units=
