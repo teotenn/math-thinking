@@ -11,3 +11,55 @@
 
 Simulates the randon throw of a dart. It can land anywhere in the 
 square (uniformly randomly).
+
+In R
+
+#+BEGIN_SRC R :results output
+  source('darts.R')
+
+  throw.dart()
+
+  system.time({
+      for (i in 1:100000){
+          throw.dart()
+      }
+  })  
+#+END_SRC
+
+#+RESULTS:
+: [1] 0.9071691 0.1507972
+:    user  system elapsed 
+:   1.108   0.049   1.157 
+
+In python
+
+#+BEGIN_SRC python :session :results outut :exports both
+import darts as d
+import timeit
+
+throw_dart()
+print(timeit.timeit(d.throw_dart, number = 100000))
+#+END_SRC
+
+#+RESULTS:
+: 0.1471399299944285
+
+Common Lisp
+
+#+BEGIN_SRC lisp :session :results output :exports both
+  (load "darts.lisp")
+
+  (time (throw-dart))
+
+  (time (loop repeat 100000 do (throw-dart)))
+#+END_SRC
+
+#+RESULTS:
+: Evaluation took:
+:  0.009 seconds of real time
+:  0.009334 seconds of total run time (0.009334 user, 0.000000 system)
+:  100.00% CPU
+:  17,408,020 processor cycles
+:  3,211,264 bytes consed
+
+ CL is clearly the fastest
