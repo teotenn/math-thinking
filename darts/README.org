@@ -14,7 +14,7 @@ square (uniformly randomly).
 
 In R
 
-#+BEGIN_SRC R :results output
+#+BEGIN_SRC R :results output :exports both
   source('darts.R')
 
   throw.dart()
