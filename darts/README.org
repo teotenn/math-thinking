@@ -5,7 +5,7 @@
 #+EMAIL:     teoten@gmail.com
 #+LANGUAGE:   en
 #+STYLE:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
-#+BABEL: :exports both
+#+BABEL: header-args :exports both
 
 * Darts
 
@@ -27,18 +27,20 @@ In R
 #+END_SRC
 
 #+RESULTS:
-: [1] 0.9071691 0.1507972
+: [1]  0.5070483 -0.1376662
 :    user  system elapsed 
-:   1.108   0.049   1.157 
+:   1.155   0.060   1.217 
 
 In python
 
-#+BEGIN_SRC python :session :results outut :exports both
+#+BEGIN_SRC python :session :results code :exports both
 import darts as d
 import timeit
 
-throw_dart()
-print(timeit.timeit(d.throw_dart, number = 100000))
+d.throw_dart()
+
+
+#print(timeit.timeit(throw_dart, number = 100000))
 #+END_SRC
 
 #+RESULTS:
@@ -46,7 +48,7 @@ print(timeit.timeit(d.throw_dart, number = 100000))
 
 Common Lisp
 
-#+BEGIN_SRC lisp :session :results output :exports both
+#+BEGIN_SRC lisp :session :results code :exports both
   (load "darts.lisp")
 
   (time (throw-dart))
@@ -63,3 +65,14 @@ Common Lisp
 :  3,211,264 bytes consed
 
  CL is clearly the fastest
+
+ob-julia not working
+
+#+BEGIN_SRC julia :results none :exports code :eval never-export
+  @time for i in 1:100000
+      throw_dart()
+  end
+
+  julia>   0.023551 seconds (100.02 k allocations: 9.175 MiB)
+#+END_SRC
+
